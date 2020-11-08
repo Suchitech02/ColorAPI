@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using ColorAPI.Entityframework;
+using ColorAPI.ProductionServerMigration;
 
 namespace ColorAPI
 {
@@ -26,6 +29,14 @@ namespace ColorAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+             services.AddControllers();
+            var server=Configuration["DBServer"] ?? "PER-WIN-23595S2";
+             var port=Configuration["DBPort"] ?? "49175";
+             var user=Configuration["DBUser"] ?? "ACCIGO\\Suchi.Chaudhary";
+             var password=Configuration["DBPassword"] ?? "";
+             var database=Configuration["database"] ?? "Colors";
+
+             services.AddDbContext<ColorContext>(Temp=>Temp.UseSqlServer($"server={server};initial catalog={database};user id={user};password={password}"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
