@@ -50,7 +50,7 @@
             },
             "Microsoft.entityframeworkcore.sqlserver": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.entityframeworkcore.tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

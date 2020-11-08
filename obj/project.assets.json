@@ -5715,7 +5715,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.entityframeworkcore >= 3.1.9",
-      "Microsoft.entityframeworkcore.sqlserver >= *",
+      "Microsoft.entityframeworkcore.sqlserver >= 3.1.9",
       "Microsoft.entityframeworkcore.tools >= 3.1.9"
     ]
   },
@@ -5770,7 +5770,7 @@
           },
           "Microsoft.entityframeworkcore.sqlserver": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[3.1.9, )"
           },
           "Microsoft.entityframeworkcore.tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
