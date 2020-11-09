@@ -29,12 +29,12 @@ namespace ColorAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            var server=Configuration["DBServer"] ?? "PER-WIN-23595S2";
-            var port=Configuration["DBPort"] ?? "49175";
+            var server=Configuration["DBServer"] ?? "192.168.10.200";
+            var port=Configuration["DBPort"] ?? "1433";
             var user=Configuration["DBUser"] ?? "Suchi";
             var password=Configuration["DBPassword"] ?? "Kista@2020";
             var database=Configuration["database"] ?? "Colors";
-            services.AddDbContext<ColorContext>(Temp=>Temp.UseSqlServer($"server={server};initial catalog={database};user id={user};password={password}"));
+            services.AddDbContext<ColorContext>(Temp=>Temp.UseSqlServer($"server={server},{port};initial catalog={database};user id={user};password={password}"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

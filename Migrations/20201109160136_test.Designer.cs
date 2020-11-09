@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ColorAPI.Migrations
 {
     [DbContext(typeof(ColorContext))]
-    [Migration("20201108163328_test")]
+    [Migration("20201109160136_test")]
     partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
